@@ -44,4 +44,11 @@ next-env.d.ts
 .gemini/
 *.swp
 
+# Local Documentation & AI Rules
+AGENTS.md
+GEMINI.md
+CLAUDE.md
+DESIGN.md
+
+
 

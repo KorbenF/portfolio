@@ -24,11 +24,20 @@ export const metadata: Metadata = {
     siteName: 'FK STUDIO',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'FK STUDIO | Web Design & Development',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'FK STUDIO | Web Design & Development',
     description: 'Professional web design and development services. Custom websites, UI/UX design, and frontend development for businesses.',
+    images: ['/og-image.png'],
   },
 };
 

@@ -102,8 +102,7 @@ export default function SiteFooter({ showCta = true }: { showCta?: boolean }) {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-neutral-600 text-[10px] font-bold uppercase tracking-[0.2em]">
           <div className="order-2 md:order-1">© 2026 FK STUDIO — WEB DESIGN</div>
           <div className="order-1 md:order-2 flex gap-8">
-            <Link href="#" className="hover:text-white transition-colors">LEGAL</Link>
-            <Link href="#" className="hover:text-white transition-colors">PRIVACY</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">PRIVACY</Link>
           </div>
         </div>
 

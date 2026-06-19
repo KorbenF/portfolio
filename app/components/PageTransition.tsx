@@ -15,6 +15,12 @@ export default function PageTransition({ children }: { children: React.ReactNode
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Reset scroll to top instantly on page change, unless there is a hash
+    if (!window.location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+
     el.classList.remove('animate-page-in');
     // Force a reflow so removing + re-adding the class is noticed by the browser
     void el.offsetHeight;

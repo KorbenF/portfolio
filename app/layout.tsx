@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import PageTransition from "./components/PageTransition";
 import Navbar from "./components/Navbar";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const manrope = Manrope({
   variable: "--font-headline",
@@ -50,7 +51,9 @@ export default function RootLayout({
         <PageTransition>
           {children}
         </PageTransition>
+        <SpeedInsights />
       </body>
     </html>
   );
 }
+

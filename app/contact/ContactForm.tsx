@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 const PROJECT_TYPES = [
   { id: 'website',  label: 'Website',  icon: 'language' },
@@ -18,12 +19,21 @@ const TIMELINES = [
 type FormState = 'idle' | 'loading' | 'error';
 
 export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
+  const searchParams = useSearchParams();
   const [projectType, setProjectType] = useState<string | null>(null);
   const [timeline, setTimeline]       = useState<string | null>(null);
   const [formState, setFormState]     = useState<FormState>('idle');
   const [errors, setErrors]           = useState<Record<string, string>>({});
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
+
+  // Pre-select project type from URL query parameter (e.g. /contact?type=eshop)
+  useEffect(() => {
+    const typeQuery = searchParams.get('type');
+    if (typeQuery && PROJECT_TYPES.some(pt => pt.id === typeQuery)) {
+      setProjectType(typeQuery);
+    }
+  }, [searchParams]);
 
   const validate = (data: FormData) => {
     const errs: Record<string, string> = {};

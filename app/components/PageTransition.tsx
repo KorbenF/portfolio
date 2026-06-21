@@ -12,7 +12,15 @@ export default function PageTransition({ children }: { children: React.ReactNode
   const pathname = usePathname();
   const ref = useRef<HTMLDivElement>(null);
 
+  const isFirstRender = useRef(true);
+
   useEffect(() => {
+    // Skip animation reset on the very first page load/hydration to prevent Safari paint lockups
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
     const el = ref.current;
     if (!el) return;
 

@@ -84,7 +84,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
               {/* Slot 1 - Web Presentation */}
               <ProjectCard
-                href="#contact"
+                href="/contact?type=website"
                 colSpan="md:col-span-8"
                 aspectRatio="aspect-[16/9]"
                 imageSrc="/images/slot_web_placeholder.webp"
@@ -101,7 +101,7 @@ export default function Home() {
 
               {/* Slot 2 - E-Commerce */}
               <ProjectCard
-                href="#contact"
+                href="/contact?type=eshop"
                 colSpan="md:col-span-4"
                 aspectRatio="aspect-[4/5]"
                 imageSrc="/images/slot_eshop_placeholder.webp"
@@ -116,7 +116,7 @@ export default function Home() {
 
               {/* Slot 3 - Branding */}
               <ProjectCard
-                href="#contact"
+                href="/contact?type=redesign"
                 colSpan="md:col-span-4"
                 aspectRatio="aspect-[4/5]"
                 imageSrc="/images/slot_branding_placeholder.webp"
@@ -131,7 +131,7 @@ export default function Home() {
 
               {/* Slot 4 - Web Apps */}
               <ProjectCard
-                href="#contact"
+                href="/contact?type=other"
                 colSpan="md:col-span-8"
                 aspectRatio="aspect-[16/9]"
                 imageSrc="/images/slot_webapp_placeholder.webp"

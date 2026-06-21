@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import SiteFooter from '../components/SiteFooter';
 import ScrollToTop from '../components/ScrollToTop';
 import ContactForm from './ContactForm';
@@ -70,7 +70,9 @@ export default function ContactPageContent() {
 
               {/* Right — form */}
               <div className="lg:col-span-7 relative">
-                <ContactForm onSuccess={() => setSubmitted(true)} />
+                <Suspense fallback={<div className="text-neutral-500 font-bold text-xs uppercase tracking-widest animate-pulse">Loading form...</div>}>
+                  <ContactForm onSuccess={() => setSubmitted(true)} />
+                </Suspense>
 
                 {/* Direct contact — Mobile only */}
                 <div className="lg:hidden border-t border-white/5 pt-12 mt-20">

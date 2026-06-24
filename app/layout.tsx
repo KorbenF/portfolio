@@ -4,6 +4,7 @@ import "./globals.css";
 import PageTransition from "./components/PageTransition";
 import Navbar from "./components/Navbar";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const manrope = Manrope({
   variable: "--font-headline",
@@ -61,6 +62,7 @@ export default function RootLayout({
           {children}
         </PageTransition>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
